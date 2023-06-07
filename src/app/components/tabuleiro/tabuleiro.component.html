@@ -1,0 +1,28 @@
+<header>
+    <h1>Jogo da vida</h1>
+</header>
+<main>
+    <div>
+        <div class="infos">
+            <p style="color: green;" *ngIf="rodando == true; else inativo">O jogo esta ativo</p>
+            <ng-template #inativo>
+                <p style="color: rgb(193, 5, 5);">O jogo esta inativo</p>
+            </ng-template>
+
+            <p>rodadas: {{rodadas}} </p>
+        </div>
+
+        <table>
+            <tr *ngFor="let linha of tabuleiro;  let i = index">
+                <td class="item-tabuleiro" *ngFor="let cell of linha; let j = index" (click)="selecionarCelula(i, j)"
+                    [ngClass]="{ viva: cell }"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="buttons">
+        <button id="iniciar" (click)="iniciarJogo()">Iniciar Jogo</button>
+        <button id="pausar" (click)="pausarJogo()">Pausar Jogo</button>
+        <button id="resetar" (click)="resetarJogo()">Resetar Jogo</button>
+    </div>
+</main>
