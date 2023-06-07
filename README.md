@@ -1,4 +1,5 @@
 # JogoDaVida
+This project was generated with Angular CLI version 15.1.4.
 
 ## Deploy
 
